@@ -15,6 +15,7 @@ predicates = "1"
 name = "disemvowel-in-rust"
 path = "disemvowel/main.rs"
 
-[[bin]]
-name = "palindrome"
-path = "palindrome/main.rs"
+
+# [[bin]]
+# name = "palindrome"
+# path = "palindrome/main.rs"
