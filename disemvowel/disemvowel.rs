@@ -1,22 +1,17 @@
 //DONE: Return the input string without vowels.
 
 pub fn disemvowel(s: &str) -> String {
-    let mut output:String = String::new();
-    let chars = s.chars();
+    let mut output:String = String::new(); // create empty string
+    let chars = s.chars(); // create array of chars from string (s)
     for c in chars { // for each char (c) in the string (s)
-        if !is_vowel(c) { //s[c].to_string()
+        if !is_vowel(c) { // check if char is a vowel
             output.push(c); // write char to output
         }
     }
     return output;
 }
     
-/*
-pub fn disemvowel(s: &str) -> String {
-    s.chars().filter(|c| !is_vowel(*c)).collect()
-    
-}
-*/
+//is_vowel returns a boolean.
 fn is_vowel(c: char) -> bool {
     matches!(c,  'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' )
 }

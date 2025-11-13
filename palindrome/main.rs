@@ -3,11 +3,16 @@ fn main() {
     println!("{}", palindrome("abcdedcba"));
 }
 
+
+//Sets a variable "reversed" equaled to the string reverse function.
+//s == reversed gives a boolean and .to_string() returns it as a string.
 fn palindrome(s: &str) -> String {
   let reversed = str_reverse(s);
   (s == reversed).to_string()
 }
 
+//Wrote str_reverse first. Takes the string of characters reverses then and then
+//collects back into a string using collect.
 fn str_reverse(s: &str) -> String {
    s.chars().rev().collect()
 }
@@ -21,7 +26,10 @@ mod tests {
 
   #[test]
   fn str_rv_works() {
+    let input = "Hello World";
+    let expected = "dlroW olleH"
 
+    assert_eq!(expected, str_reverse(input));
   }
 }
 
