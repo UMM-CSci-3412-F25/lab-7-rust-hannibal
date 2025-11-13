@@ -4,11 +4,12 @@ fn main() {
 }
 
 fn palindrome(s: &str) -> String {
-
+  let reversed = str_reverse(s);
+  (s == reversed).to_string()
 }
 
 fn str_reverse(s: &str) -> String {
-   
+   s.chars().rev().collect()
 }
 
 /*
