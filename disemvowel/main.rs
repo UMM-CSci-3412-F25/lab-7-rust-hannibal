@@ -15,9 +15,10 @@ fn main() {
 
     //DONE: Panic if not enough arguments are provided
     //Panic should output the string "Not enough arguments"
-    if args.len() != 2 {
+    if args.len() != 3 {
+        // println!("number of arguments was: {}", args.len());
         panic!("Not enough arguments")
-    }
+    } else {
 
     //TODO:
     //  * Pass an argument to read_file to read the original text
@@ -25,6 +26,8 @@ fn main() {
     //  * Write the disemvoweled text using write_file
 
     // Replace String::from("dummy text") with what you get from read_file
+
+    // println!("first arg was: {}", args[1]);
     let s = read_file(Path::new(&args[1])); //String::from("dummy text");
 
     let s_disemvowel = disemvowel(&s);
@@ -32,10 +35,14 @@ fn main() {
     // Use command-line arguments for the name of the file,
     // and s_disemvowel for the text to write out.
     write_file(Path::new(&args[2]), &s_disemvowel);
+    }
 }
 
 fn read_file(path: &Path) -> String {
-    fs::read_to_string(path).expect("Could not read the file")
+    // println!("in read_file, with path: {}", path.display());
+    let contents = fs::read_to_string(path).expect("Could not read the file");
+    // println!("file contents was: {}", contents);
+    return contents;
 }
 
 fn write_file(path: &Path, s: &str) {
@@ -83,3 +90,5 @@ mod tests {
             .stderr(predicate::str::contains("Could not read the file"));
     }
 }
+
+// --- ./input.txt ./target_output.txt

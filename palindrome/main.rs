@@ -13,6 +13,21 @@ fn str_reverse(s: &str) -> String {
 }
 
 /*
+#[cfg(test)]
+mod tests {
+  use assert_cmd::{assert::OutputAssertExt, cargo::CommandCargoExt};
+  use predicates::prelude::predicate;
+  use std::process::Command;
+
+  #[test]
+  fn str_rv_works() {
+
+  }
+}
+
+*/
+
+/*
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
